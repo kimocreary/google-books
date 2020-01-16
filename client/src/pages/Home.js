@@ -14,10 +14,13 @@ class Home extends Component{
     }
     search = ()=>{
         console.log(this.state.userInput)
-      axios.get("/google/" + this.state.userInput, function(error, response){
-          if(error)throw error
-          console.log(response)
-      })
+        const userInput = this.state.userInput;
+        axios.get("https://www.googleapis.com/books/v1/volumes?q=" + userInput)
+        .then(results=>{console.log(results)})
+    //   axios.get("/google/" + this.state.userInput, function(error, response){
+    //       if(error)throw error
+    //       console.log(response)
+    //   })
     }
  render(){
      return(<div>
