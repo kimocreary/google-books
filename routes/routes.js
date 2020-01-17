@@ -1,7 +1,7 @@
 
 const router = require("express").Router()
 const books = require("../controllers/bookscontroller")
-import axios from "axios"
+
 router.get("/api",function(req,res){
     console.log("route reached")
     books.findall(req,res)
