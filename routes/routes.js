@@ -10,6 +10,7 @@ router.get("/api/:id",function(req,res){
     books.find(req,res)
 })
 router.post("/api/new",function(req,res){
+    console.log(req.body)
     books.create(req,res)
 })
 router.put("/api/:id",function(req,res){
