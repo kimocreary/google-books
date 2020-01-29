@@ -1,7 +1,7 @@
 const db = require("../models/books")
 module.exports = {
     findall: function(req,res){
-        db.book.find({}).then(function(resp){
+        db.find({}).then(function(resp){
             res.json(resp)
         })
         .catch(function(error){
@@ -10,7 +10,7 @@ module.exports = {
         })
     },
     find: function(req,res){
-        db.book.findById({_id:req.parms.id}).then(function(resp){
+        db.findById({_id:req.parms.id}).then(function(resp){
             res.json(resp)
         })
         .catch(function(error){
@@ -20,7 +20,7 @@ module.exports = {
     },
 
     update: function(req,res){
-        db.book.findOneAndUpdate({_id:req.parms.id},req.body).then(function(resp){
+        db.findOneAndUpdate({_id:req.parms.id},req.body).then(function(resp){
             res.json(resp)
         })
         .catch(function(error){
@@ -29,7 +29,7 @@ module.exports = {
         })
     },
     remove: function(req,res){
-        db.book.findByIdAndRemove(req.parms.id).then(function(resp){
+        db.findByIdAndRemove(req.parms.id).then(function(resp){
             res.json(resp)
         })
         .catch(function(error){
@@ -38,8 +38,10 @@ module.exports = {
         })
     },
     create: function(req,res){
-        db.book.create(req.body).then(function(resp){
-            res.json(resp)
+        // console.log("create",req.body)
+        db.create(req.body).then(function(resp){
+            console.log(resp)
+            res.json(resp)           
         })
         .catch(function(error){
             console.log(error)

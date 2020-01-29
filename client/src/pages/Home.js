@@ -28,6 +28,7 @@ class Home extends Component{
                     author:results.data.items[i].volumeInfo.authors,
                     id:results.data.items[i].id,
                     link:results.data.items[i].volumeInfo.previewLink,
+                    description:results.data.items[i].volumeInfo.description
                 })
             }
             this.setState({books: book})
@@ -50,6 +51,7 @@ class Home extends Component{
                             key = {index}
                             title = {book.title}
                             author = {book.author}
+                            description = {book.description}
                             id = {book.id}
                             link = {book.link}
                          />

@@ -6,14 +6,10 @@ var booksSchema = new Schema({
         required: true 
     },
     authors:{
-        type: String,
+        type: Array,
         required: true 
     },
     description:{
-        type: String,
-        required: true 
-    },
-    image:{
         type: String,
         required: true 
     },
